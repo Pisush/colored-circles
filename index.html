@@ -1,0 +1,29 @@
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            var colorPicker = document.createElement('input');
+colorPicker.type = 'color';
+document.body.appendChild(colorPicker);
+
+
+
+            var canvas = document.createElement('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+document.body.appendChild(canvas);
+canvas.addEventListener('click', function(e) {
+  var ctx = canvas.getContext('2d');
+  ctx.beginPath();
+  ctx.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI);
+  ctx.fillStyle = colorPicker.value;
+  ctx.fill();
+});
+
+
+});
+        </script>
+    </head>
+</html>
